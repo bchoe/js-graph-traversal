@@ -5,6 +5,7 @@ const Node = require('./graphGenerator');
 let stack = [];
 let node;
 let visited = [];
+let edge = []
 
 const DFS = (start, searchFor) => {
 
@@ -13,6 +14,11 @@ const DFS = (start, searchFor) => {
   while(stack.length > 0){
     node = stack.pop();
     console.log('node*******', node);
+  } if (visited.indexOf(node.name) === -1){
+    visited.push(searchFor);
+    edge = node.neighbors;
+    console.log('node.neighbors', node.neighbors);
+    console.log('edge', edge);
   }
 }
 
